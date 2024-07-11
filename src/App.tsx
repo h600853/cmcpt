@@ -13,7 +13,7 @@ const game: Game = {
   aldersgrense_id: 5,
   produsent_id: 102,
   anmeldelse_id: 305,
-  bilde_url: ""
+  bilde_url: "https://th.bing.com/th/id/OIP.uzsOwSbQyy1nq0u7AaiHYAHaHa?rs=1&pid=ImgDetMain"
 };
 
 function App() {
