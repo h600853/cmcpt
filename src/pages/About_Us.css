@@ -1,0 +1,54 @@
+.about-us-container {
+    font-family: Arial, sans-serif;
+    background-color: #0D1B2A;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.about-us-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.team-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+}
+
+.member-info {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin-top: -20px;
+    position: relative;
+}
+
+.scroll-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.scroll-buttons button {
+    background-color: white;
+    border: none;
+    color: #0D1B2A;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.scroll-buttons button:hover {
+    background-color: #1C4D94;
+}
