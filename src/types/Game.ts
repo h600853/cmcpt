@@ -10,4 +10,4 @@ interface Game {
     anmeldelse_id?: number; 
     bilde_url?: string; 
   };
-  
+  export default Game

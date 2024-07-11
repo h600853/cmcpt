@@ -1,15 +1,37 @@
+import React from 'react';
+import GameCardProps from './GameCardProps';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
-    return (
-      <div>
-        <h2>{game.tittel}</h2>
-        {game.bilde_url && <img src={game.bilde_url} alt={game.tittel} />}
-        <p>Price: {game.pris}</p>
-        <p>Size: {game.storrelse}</p>
-        <p>Beskrivelse: {game.beskrivelse}</p>
-        <p>UtgivelseDato: {game.utgivelse}</p>
-      </div>
-    );
-  };
-  
-  export default GameCard;
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        sx={{ height: 140 }}
+        image={game.bilde_url || "/static/images/cards/contemplative-reptile.jpg"}
+        title={game.tittel}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {game.tittel}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        <strong>Pris: </strong> {game.pris}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          <strong>Størrelse: </strong> {game.storrelse}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          <strong>Utgivelsedato: </strong> {game.utgivelse}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          <strong>Beskrivelse: </strong> {game.beskrivelse}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default GameCard;
