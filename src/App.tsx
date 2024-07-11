@@ -16,6 +16,7 @@ const game: Game = {
   bilde_url: "https://th.bing.com/th/id/OIP.uzsOwSbQyy1nq0u7AaiHYAHaHa?rs=1&pid=ImgDetMain"
 };
 
+
 function App() {
   return (
     
