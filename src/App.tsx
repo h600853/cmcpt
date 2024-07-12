@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/About_Us";
 import "./App.css";
-import Navbar from "./components/Navbar";
 
 const gamesData: Game[] = [
   {
@@ -64,7 +63,6 @@ const gamesData: Game[] = [
   },
   // Add more games as needed
 ];
-
 const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
@@ -76,7 +74,9 @@ const App: React.FC = () => {
     return (
       game.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedGenre ? game.genre === selectedGenre : true) &&
-      (selectedAgeRating ? game.ageRating === selectedAgeRating : true)
+      (selectedAgeRating
+        ? parseInt(game.ageRating) <= parseInt(selectedAgeRating)
+        : true)
     );
   });
 
@@ -91,9 +91,10 @@ const App: React.FC = () => {
         <h1>Can My Child Play This?</h1>
         <p>Find out if it is safe for your child to play that game</p>
 
-        <div style={{ marginBottom: "20px" }}>
+        <div style={{ marginBottom: "10px" }}>
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
+
         <Filter
           selectedGenre={selectedGenre}
           setSelectedGenre={setSelectedGenre}
@@ -101,6 +102,7 @@ const App: React.FC = () => {
           setSelectedAgeRating={setSelectedAgeRating}
         />
       </div>
+      <GameLibrary games={filteredGames} />
     </>
   );
 };
