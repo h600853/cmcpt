@@ -64,13 +64,12 @@ const gamesData: Game[] = [
   // Add more games as needed
 ];
 
-
 const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedAgeRating, setSelectedAgeRating] = useState("");
 
- const databaseGames = useFetchData<Game>({endpoint: "games"});
+  const databaseGames = useFetchData<Game>({ endpoint: "games" });
 
   const filteredGames = gamesData.filter((game) => {
     return (
@@ -82,21 +81,23 @@ const App: React.FC = () => {
 
   return (
     <>
-    <Navbar></Navbar>
-    <Routes>
-    <Route path="/about" element={<AboutUs />} />
-    </Routes>
-    <div className="centered-container">
-      <h1>Can My Child Play This?</h1>
-      <p>Find out if it is safe for your child to play that game</p>
-      <div style={{ marginBottom: "20px" }}>
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      </div>
-      <Filter
-        selectedGenre={selectedGenre}
-        setSelectedGenre={setSelectedGenre}
-        selectedAgeRating={selectedAgeRating}
-        setSelectedAgeRating={setSelectedAgeRating}
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/about" element={<AboutUs />} />
+      </Routes>
+
+      <div className="centered-container">
+        <h1>Can My Child Play This?</h1>
+        <p>Find out if it is safe for your child to play that game</p>
+
+        <div style={{ marginBottom: "20px" }}>
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        </div>
+        <Filter
+          selectedGenre={selectedGenre}
+          setSelectedGenre={setSelectedGenre}
+          selectedAgeRating={selectedAgeRating}
+          setSelectedAgeRating={setSelectedAgeRating}
         />
     </div>
       <GameLibrary games={filteredGames} />
