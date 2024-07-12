@@ -24,6 +24,7 @@ const Filter: React.FC<FilterProps> = ({
         <option value="Adventure">Adventure</option>
         <option value="RPG">RPG</option>
         <option value="Strategy">Strategy</option>
+        <option value="Simulation">Simulation</option>
       </select>
 
       <select

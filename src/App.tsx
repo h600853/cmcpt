@@ -3,7 +3,9 @@ import SearchBar from "./components/SearchBar";
 import Filter from "./components/Filter";
 import GameLibrary from "./components/GameLibrary";
 import Game from "./types/Game";
+import "./App.css";
 
+/* Husk: Å endre filtreringen på alder*/
 const gamesData: Game[] = [
   {
     game_id: 1,
@@ -30,10 +32,30 @@ const gamesData: Game[] = [
     game_id: 3,
     title: "Final Fantasy VII",
     genre: "RPG",
-    ageRating: "12, 7, 3",
+    ageRating: "12",
     producer_id: 3,
     image_url: "https://upload.wikimedia.org/wikipedia/en/c/ce/FFVIIRemake.png",
     triggerWarnings: ["Fantasy violence", "Mild language"],
+  },
+  {
+    game_id: 4,
+    title: "Animal Crossing",
+    genre: "Simulation",
+    ageRating: "3",
+    producer_id: 4,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Animal_Crossing_Logo.png/375px-Animal_Crossing_Logo.png",
+    triggerWarnings: [],
+  },
+  {
+    game_id: 5,
+    title: "Apex Legends",
+    genre: "Shooter",
+    ageRating: "12",
+    producer_id: 5,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/en/d/db/Apex_legends_cover.jpg",
+    triggerWarnings: ["Violence"],
   },
   // Add more games as needed
 ];
@@ -52,20 +74,24 @@ const App: React.FC = () => {
   });
 
   return (
-    <div className="centered-container">
-      <h1>Can My Child Play This?</h1>
-      <p>Find out if it is safe for your child to play that game</p>
-      <div style={{ marginBottom: "20px" }}>
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    <>
+      <div className="centered-container">
+        <div className="content">
+          <h1>Can My Child Play This?</h1>
+          <p>Find out if it is safe for your child to play that game</p>
+          <div style={{ marginBottom: "20px" }}>
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          </div>
+          <Filter
+            selectedGenre={selectedGenre}
+            setSelectedGenre={setSelectedGenre}
+            selectedAgeRating={selectedAgeRating}
+            setSelectedAgeRating={setSelectedAgeRating}
+          />
+        </div>
       </div>
-      <Filter
-        selectedGenre={selectedGenre}
-        setSelectedGenre={setSelectedGenre}
-        selectedAgeRating={selectedAgeRating}
-        setSelectedAgeRating={setSelectedAgeRating}
-      />
       <GameLibrary games={filteredGames} />
-    </div>
+    </>
   );
 };
 
