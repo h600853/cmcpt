@@ -3,9 +3,7 @@ import SearchBar from "./components/SearchBar";
 import Filter from "./components/Filter";
 import GameLibrary from "./components/GameLibrary";
 import Game from "./types/Game";
-import "./App.css";
 
-/* Husk: Å endre filtreringen på alder*/
 const gamesData: Game[] = [
   {
     game_id: 1,
@@ -23,6 +21,7 @@ const gamesData: Game[] = [
     title: "Call of Duty",
     genre: "Action",
     ageRating: "12",
+    price: 200,
     producer_id: 2,
     image_url:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1sWanrHu3WFjHpCnmcwJcd2O5X4OPY2Qfnw&usqp=CAU",
@@ -74,24 +73,20 @@ const App: React.FC = () => {
   });
 
   return (
-    <>
-      <div className="centered-container">
-        <div className="content">
-          <h1>Can My Child Play This?</h1>
-          <p>Find out if it is safe for your child to play that game</p>
-          <div style={{ marginBottom: "20px" }}>
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          </div>
-          <Filter
-            selectedGenre={selectedGenre}
-            setSelectedGenre={setSelectedGenre}
-            selectedAgeRating={selectedAgeRating}
-            setSelectedAgeRating={setSelectedAgeRating}
-          />
-        </div>
+    <div className="centered-container">
+      <h1>Can My Child Play This?</h1>
+      <p>Find out if it is safe for your child to play that game</p>
+      <div style={{ marginBottom: "20px" }}>
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
+      <Filter
+        selectedGenre={selectedGenre}
+        setSelectedGenre={setSelectedGenre}
+        selectedAgeRating={selectedAgeRating}
+        setSelectedAgeRating={setSelectedAgeRating}
+      />
       <GameLibrary games={filteredGames} />
-    </>
+    </div>
   );
 };
 

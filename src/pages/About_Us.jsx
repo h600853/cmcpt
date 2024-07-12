@@ -1,10 +1,10 @@
 import React from 'react';
-import './AboutUs.css';
+import "./About_Us.css"
+import Navbar from '../components/Navbar.jsx';
 
 const AboutUs = () => {
     return (
         <div className="about-us-container">
-            <Navbar />
             <div className="about-us-content">
                 <h1>About Us</h1>
                 <p>Our team helps parents succeed with game selection</p>
