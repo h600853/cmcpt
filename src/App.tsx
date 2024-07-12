@@ -3,6 +3,10 @@ import SearchBar from "./components/SearchBar";
 import Filter from "./components/Filter";
 import GameLibrary from "./components/GameLibrary";
 import Game from "./types/Game";
+import useFetchData from "./components/useFetchData";
+import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import AboutUs from "./pages/About_Us";
 import "./App.css";
 import Navbar from "./components/Navbar";
 
@@ -66,6 +70,8 @@ const App: React.FC = () => {
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedAgeRating, setSelectedAgeRating] = useState("");
 
+  const databaseGames = useFetchData<Game>({ endpoint: "games" });
+
   const filteredGames = gamesData.filter((game) => {
     return (
       game.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -76,21 +82,25 @@ const App: React.FC = () => {
 
   return (
     <>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/about" element={<AboutUs />} />
+      </Routes>
+
       <div className="centered-container">
         <h1>Can My Child Play This?</h1>
         <p>Find out if it is safe for your child to play that game</p>
 
-        <div className="search-filter">
+        <div style={{ marginBottom: "20px" }}>
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          <Filter
-            selectedGenre={selectedGenre}
-            setSelectedGenre={setSelectedGenre}
-            selectedAgeRating={selectedAgeRating}
-            setSelectedAgeRating={setSelectedAgeRating}
-          />
         </div>
+        <Filter
+          selectedGenre={selectedGenre}
+          setSelectedGenre={setSelectedGenre}
+          selectedAgeRating={selectedAgeRating}
+          setSelectedAgeRating={setSelectedAgeRating}
+        />
       </div>
-      <GameLibrary games={filteredGames} />
     </>
   );
 };
