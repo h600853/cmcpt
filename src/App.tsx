@@ -23,17 +23,16 @@ const gamesData: Game[] = [
     ageRating: "12",
     producer_id: 2,
     image_url:
-      "https://image_url.api.playstation.com/vulcan/ap/rnd/202306/2400/ac505d57a46e24dd96712263d89a150cb443af288c025ff2.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1sWanrHu3WFjHpCnmcwJcd2O5X4OPY2Qfnw&usqp=CAU",
     triggerWarnings: ["Violence", "Strong language"],
   },
   {
     game_id: 3,
     title: "Final Fantasy VII",
     genre: "RPG",
-    ageRating: "12",
+    ageRating: "12, 7, 3",
     producer_id: 3,
-    image_url:
-      "https://image_url.api.playstation.com/vulcan/ap/rnd/202308/3005/537b5208a8ee42935286a44b3b981da86d976bf54899bf98.jpg",
+    image_url: "https://upload.wikimedia.org/wikipedia/en/c/ce/FFVIIRemake.png",
     triggerWarnings: ["Fantasy violence", "Mild language"],
   },
   // Add more games as needed

@@ -31,11 +31,11 @@ const Filter: React.FC<FilterProps> = ({
         onChange={(e) => setSelectedAgeRating(e.target.value)}
       >
         <option value="">All Age Ratings</option>
-        <option value="18">E</option>
-        <option value="16">E</option>
-        <option value="12">T</option>
-        <option value="7">M</option>
-        <option value="3">E</option>
+        <option value="18">18</option>
+        <option value="16">16</option>
+        <option value="12">12</option>
+        <option value="7">7</option>
+        <option value="3">3</option>
       </select>
     </div>
   );

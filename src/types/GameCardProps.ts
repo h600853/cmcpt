@@ -12,7 +12,7 @@ interface GameCardProps {
   description?: string; 
   publishing?: string; 
   producer_id?: number; 
-  rating_id?: number; 
+  rating_id?: number ; 
 }
 
 export default GameCardProps;
