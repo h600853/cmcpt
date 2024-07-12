@@ -3,7 +3,9 @@ import SearchBar from "./components/SearchBar";
 import Filter from "./components/Filter";
 import GameLibrary from "./components/GameLibrary";
 import Game from "./types/Game";
-
+import { Route, Routes } from "react-router-dom";
+import AboutUs from "./pages/About_Us";
+import Navbar from "./components/Navbar";
 const gamesData: Game[] = [
   {
     game_id: 1,
@@ -21,6 +23,7 @@ const gamesData: Game[] = [
     title: "Call of Duty",
     genre: "Action",
     ageRating: "12",
+    price: 200,
     producer_id: 2,
     image_url:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1sWanrHu3WFjHpCnmcwJcd2O5X4OPY2Qfnw&usqp=CAU",
@@ -52,6 +55,11 @@ const App: React.FC = () => {
   });
 
   return (
+    <>
+    <Navbar></Navbar>
+    <Routes>
+    <Route path="/about" element={<AboutUs />} />
+    </Routes>
     <div className="centered-container">
       <h1>Can My Child Play This?</h1>
       <p>Find out if it is safe for your child to play that game</p>
@@ -66,6 +74,7 @@ const App: React.FC = () => {
       />
       <GameLibrary games={filteredGames} />
     </div>
+    </>
   );
 };
 
