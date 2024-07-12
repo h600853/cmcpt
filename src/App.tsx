@@ -7,6 +7,7 @@ import useFetchData from "./components/useFetchData";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/About_Us";
+import "./App.css";
 
 const gamesData: Game[] = [
   {
