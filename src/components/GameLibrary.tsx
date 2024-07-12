@@ -18,7 +18,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games }) => {
           title={game.title}
           genre={game.genre}
           ageRating={game.ageRating}
-          image={game.image}
+          image={game.image_url}
           triggerWarnings={game.triggerWarnings}
         />
       ))}

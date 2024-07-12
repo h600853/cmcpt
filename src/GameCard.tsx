@@ -1,33 +1,35 @@
-import React from 'react';
-import GameCardProps from './GameCardProps';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import React from "react";
+import GameCardProps from "./GameCardProps";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image={game.bilde_url || "/static/images/cards/contemplative-reptile.jpg"}
-        title={game.tittel}
+        image={
+          game.image_url || "/static/images/cards/contemplative-reptile.jpg"
+        }
+        title={game.title}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {game.tittel}
+          {game.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        <strong>Pris: </strong> {game.pris}
+          <strong>Pris: </strong> {game.price}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <strong>Størrelse: </strong> {game.storrelse}
+          <strong>Størrelse: </strong> {game.size}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <strong>Utgivelsedato: </strong> {game.utgivelse}
+          <strong>Utgivelsedato: </strong> {game.release}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <strong>Beskrivelse: </strong> {game.beskrivelse}
+          <strong>Beskrivelse: </strong> {game.description}
         </Typography>
       </CardContent>
     </Card>

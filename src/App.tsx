@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import Filter from "./components/Filter";
@@ -13,7 +12,7 @@ const gamesData: Game[] = [
     genre: "Adventure",
     ageRating: "7",
     producer_id: 1,
-    image:
+    image_url:
       "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
     triggerWarnings: ["Fantasy violence"],
   },
@@ -23,8 +22,8 @@ const gamesData: Game[] = [
     genre: "Action",
     ageRating: "12",
     producer_id: 2,
-    image:
-      "https://image.api.playstation.com/vulcan/ap/rnd/202306/2400/ac505d57a46e24dd96712263d89a150cb443af288c025ff2.jpg",
+    image_url:
+      "https://image_url.api.playstation.com/vulcan/ap/rnd/202306/2400/ac505d57a46e24dd96712263d89a150cb443af288c025ff2.jpg",
     triggerWarnings: ["Violence", "Strong language"],
   },
   {
@@ -33,8 +32,8 @@ const gamesData: Game[] = [
     genre: "RPG",
     ageRating: "12",
     producer_id: 3,
-    image:
-      "https://image.api.playstation.com/vulcan/ap/rnd/202308/3005/537b5208a8ee42935286a44b3b981da86d976bf54899bf98.jpg",
+    image_url:
+      "https://image_url.api.playstation.com/vulcan/ap/rnd/202308/3005/537b5208a8ee42935286a44b3b981da86d976bf54899bf98.jpg",
     triggerWarnings: ["Fantasy violence", "Mild language"],
   },
   // Add more games as needed

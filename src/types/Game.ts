@@ -1,13 +1,17 @@
-interface Game {
-    spill_id: number; 
-    tittel: string; 
-    pris: number; 
-    storrelse: string; 
-    beskrivelse: string; 
-    utgivelse: string; 
-    aldersgrense_id: number; 
-    produsent_id: number; 
-    anmeldelse_id?: number; 
-    bilde_url?: string; 
-  };
-  export default Game
+
+  interface Game {
+    game_id: number; 
+    title: string; 
+    price?: number; 
+    size?: string; 
+    genre: string;
+    image_url: string; 
+    description?: string; 
+    release?: string; 
+    ageRating: string; 
+    producer_id?: number;
+    triggerWarnings: string[];
+    rating_id?: number; 
+    
+};
+export default Game;
