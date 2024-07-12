@@ -4,6 +4,7 @@ import Filter from "./components/Filter";
 import GameLibrary from "./components/GameLibrary";
 import Game from "./types/Game";
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 const gamesData: Game[] = [
   {
@@ -78,15 +79,16 @@ const App: React.FC = () => {
       <div className="centered-container">
         <h1>Can My Child Play This?</h1>
         <p>Find out if it is safe for your child to play that game</p>
-        <div style={{ marginBottom: "20px" }}>
+
+        <div className="search-filter">
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <Filter
+            selectedGenre={selectedGenre}
+            setSelectedGenre={setSelectedGenre}
+            selectedAgeRating={selectedAgeRating}
+            setSelectedAgeRating={setSelectedAgeRating}
+          />
         </div>
-        <Filter
-          selectedGenre={selectedGenre}
-          setSelectedGenre={setSelectedGenre}
-          selectedAgeRating={selectedAgeRating}
-          setSelectedAgeRating={setSelectedAgeRating}
-        />
       </div>
       <GameLibrary games={filteredGames} />
     </>
