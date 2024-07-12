@@ -10,9 +10,10 @@ const GameCard: React.FC<GameCardProps> = ({
   ageRating,
   image,
   triggerWarnings,
+  onClick
 }) => {
   return (
-    <div className="game-card">
+    <div className="game-card" onClick={onClick}>
       <img src={image || "/static/images/default-game-image.jpg"} alt={title} />
       <div className="game-card-content">
         <h5>{title}</h5>

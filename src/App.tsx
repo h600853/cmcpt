@@ -98,8 +98,8 @@ const App: React.FC = () => {
         selectedAgeRating={selectedAgeRating}
         setSelectedAgeRating={setSelectedAgeRating}
         />
-      <GameLibrary games={filteredGames} />
     </div>
+      <GameLibrary games={filteredGames} />
         </>
   );
 };

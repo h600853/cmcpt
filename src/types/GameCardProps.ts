@@ -1,4 +1,5 @@
 
+import { MouseEventHandler } from "react";
 import Game from "./Game";
 
 interface GameCardProps {
@@ -13,6 +14,7 @@ interface GameCardProps {
   publishing?: string; 
   producer_id?: number; 
   rating_id?: number; 
+  onClick?: any
 }
 
 export default GameCardProps;
