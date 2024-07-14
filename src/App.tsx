@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/About_Us";
 import "./App.css";
+import GameModal from "./components/GameModal";
 
 const gamesData: Game[] = [
   {
@@ -67,8 +68,10 @@ const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedAgeRating, setSelectedAgeRating] = useState("");
-
   const databaseGames = useFetchData<Game>({ endpoint: "games" });
+
+  //For Modalen:
+  const [selectedGame, setSelectedGame] = useState<Game | null>(null);
 
   const filteredGames = gamesData.filter((game) => {
     return (
@@ -101,9 +104,12 @@ const App: React.FC = () => {
           selectedAgeRating={selectedAgeRating}
           setSelectedAgeRating={setSelectedAgeRating}
         />
-    </div>
-      <GameLibrary games={filteredGames} />
-        </>
+      </div>
+      <GameLibrary games={filteredGames} onGameClick={setSelectedGame} />
+      {selectedGame && (
+        <GameModal game={selectedGame} onClose={() => setSelectedGame(null)} />
+      )}
+    </>
   );
 };
 
