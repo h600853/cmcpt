@@ -1,10 +1,9 @@
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #0D1B2A;
-    padding: 10px 20px;
+    padding: 10px 50px;
 }
 
 .navbar-logo .logo {
@@ -14,13 +13,14 @@
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 40px;
 }
 
 .navbar-links li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .navbar-links li a:hover {
