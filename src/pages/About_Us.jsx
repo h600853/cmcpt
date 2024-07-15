@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar.jsx';
 const AboutUs = () => {
     return (
         <div className="about-us-container">
-            <Navbar />
+            
             <div className="about-us-title">
                 <h1>About Us</h1>
             </div>
@@ -30,7 +30,7 @@ const AboutUs = () => {
                     <div className="team-member">
                         <img src={`${process.env.PUBLIC_URL}/TeamMember3.jpg`} alt="Olivia Wilson" />
                         <div className="member-info">
-                            <h3>Olivia Wilson</h3>
+                            <h3>Olivia Smith</h3>
                             <p>Sr. Graphic Designer</p>
                         </div>
                     </div>
