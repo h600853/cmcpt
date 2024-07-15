@@ -10,7 +10,7 @@ const GameCard: React.FC<GameCardProps> = ({
   ageRating,
   image,
   triggerWarnings,
-  onClick
+  onClick,
 }) => {
   return (
     <div className="game-card" onClick={onClick}>

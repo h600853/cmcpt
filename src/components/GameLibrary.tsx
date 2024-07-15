@@ -7,16 +7,14 @@ import "./GameLibrary.css";
 
 interface GameLibraryProps {
   games: Game[];
+  onGameClick: (game: Game) => void; //Modal-greier
 }
 
-const GameLibrary: React.FC<GameLibraryProps> = ({ games }) => {
-
+const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameClick }) => {
   const handleClick: MouseEventHandler<HTMLDivElement> = (event) => {
-    
     const h5Elements = event.currentTarget.getElementsByTagName("h5");
-    const gameName = h5Elements[0]?.textContent
-    const gameClicked = games.find(game => game.title == gameName);
-    
+    const gameName = h5Elements[0]?.textContent;
+    const gameClicked = games.find((game) => game.title == gameName);
   };
 
   return (
@@ -29,7 +27,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games }) => {
           ageRating={game.ageRating}
           image={game.image_url}
           triggerWarnings={game.triggerWarnings}
-          onClick={handleClick}
+          onClick={() => onGameClick(game)}
         />
       ))}
     </div>

@@ -14,7 +14,7 @@ interface GameCardProps {
   publishing?: string; 
   producer_id?: number; 
   rating_id?: number; 
-  onClick?: any
+  onClick: MouseEventHandler<HTMLDivElement>;
 }
 
 export default GameCardProps;
