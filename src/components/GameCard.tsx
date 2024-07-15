@@ -1,8 +1,8 @@
 // components/GameCard.tsx
 
 import React from "react";
-import GameCardProps from "../types/GameCardProps";
 import "./GameCard.css";
+import GameCardProps from "../types/GameCardProps";
 
 const GameCard: React.FC<GameCardProps> = ({
   title,
@@ -31,7 +31,7 @@ const GameCard: React.FC<GameCardProps> = ({
               triggerWarnings.length >
                 0 /*Hvis det ikke er noe triggerwarnings*/ ? (
                 triggerWarnings.map((warning, index) => (
-                  <li key={index}>{warning}</li>
+                  <li key={index}>{warning.description}</li>
                 ))
               ) : (
                 <li>No Trigger Warnings</li>

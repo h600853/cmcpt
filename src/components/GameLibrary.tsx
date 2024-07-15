@@ -2,7 +2,7 @@
 
 import React, { MouseEventHandler } from "react";
 import GameCard from "./GameCard";
-import Game from "../types/Game";
+import { Game } from "../types/Game";
 import "./GameLibrary.css";
 
 interface GameLibraryProps {
@@ -21,12 +21,12 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameClick }) => {
     <div className="game-grid">
       {games.map((game) => (
         <GameCard
-          key={game.game_id}
+          key={game.gameId}
           title={game.title}
-          genre={game.genre}
-          ageRating={game.ageRating}
-          image={game.image_url}
-          triggerWarnings={game.triggerWarnings}
+          genre={game.genreSet[0].name}
+          ageRating={game.ageRating.age}
+          image={game.imageUrl}
+          triggerWarnings={game.triggerWarningSet}
           onClick={() => onGameClick(game)}
         />
       ))}

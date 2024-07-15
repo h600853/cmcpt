@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
-import Game from "../types/Game";
+import { Game } from "../types/Game";
 import "./GameModal.css";
 
 interface GameModalProps {
@@ -26,7 +26,7 @@ const GameModal: React.FC<GameModalProps> = ({ game, onClose }) => {
         </div>
 
         <img
-          src={game.image_url || "/static/images/default-game-image.jpg"}
+          src={game.imageUrl || "/static/images/default-game-image.jpg"}
           alt={game.title}
           className="modal-image-large"
         />
@@ -34,7 +34,7 @@ const GameModal: React.FC<GameModalProps> = ({ game, onClose }) => {
         <div className="modal-body">
           <h2 className="modal-title">{game.title}</h2>
           <p>
-            <span className="modal-label">Genre:</span> {game.genre}
+            <span className="modal-label">Genre:</span> {game.genreSet[0].name}
           </p>
           <p>
             <span className="modal-label">Price:</span> ${game.price}
@@ -44,10 +44,10 @@ const GameModal: React.FC<GameModalProps> = ({ game, onClose }) => {
           </p>
           <p>
             <span className="modal-label">Trigger Warnings:</span>{" "}
-            {game.triggerWarnings.length > 0 ? (
+            {game.triggerWarningSet.length > 0 ? (
               <ul className="modal-trigger-warnings">
-                {game.triggerWarnings.map((warning, index) => (
-                  <li key={index}>{warning}</li>
+                {game.triggerWarningSet.map((warning, index) => (
+                  <li key={index}>{warning.description}</li>
                 ))}
               </ul>
             ) : (

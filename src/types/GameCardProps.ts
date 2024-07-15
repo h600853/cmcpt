@@ -1,12 +1,12 @@
 
 import { MouseEventHandler } from "react";
-import Game from "./Game";
+import {TriggerWarning} from "./Game";
 
 interface GameCardProps {
   title: string
   genre: string;
-  ageRating: string; 
-  triggerWarnings: string[];
+  ageRating: number; 
+  triggerWarnings: TriggerWarning[];
   price?: number; 
   image: string; 
   size?: string; 
