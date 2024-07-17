@@ -9,6 +9,7 @@ import "./App.css";
 import GameModal from "./components/GameModal";
 import Navbar from "./components/Navbar";
 import { Game } from "./types/Game";
+import MainPage from "./pages/MainPage"
 
 const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -42,28 +43,10 @@ const App: React.FC = () => {
     <>
       <Navbar />
       <Routes>
+        <Route path="/" element={<MainPage filteredGames = {filteredGames} />}></Route>
         <Route path="/about" element={<AboutUs />} />
       </Routes>
 
-      <div className="centered-container">
-        <h1>Can My Child Play This?</h1>
-        <p>Find out if it is safe for your child to play that game</p>
-
-        <div style={{ marginBottom: "10px" }}>
-          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        </div>
-
-        <Filter
-          selectedGenre={selectedGenre}
-          setSelectedGenre={setSelectedGenre}
-          selectedAgeRating={selectedAgeRating}
-          setSelectedAgeRating={setSelectedAgeRating}
-        />
-      </div>
-      <GameLibrary games={filteredGames} onGameClick={setSelectedGame} />
-      {selectedGame && (
-        <GameModal game={selectedGame} onClose={() => setSelectedGame(null)} />
-      )}
     </>
   );
 };
