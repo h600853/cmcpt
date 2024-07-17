@@ -18,7 +18,10 @@ const GameCard: React.FC<GameCardProps> = ({
       <div className="game-card-content">
         <h5>{title}</h5>
         <p>
-          <strong>Genre: </strong> {genre}
+          <strong>Genre: </strong>{" "}
+          {genre.map((warning, index) => (
+            <li key={index}>{warning.name}</li>
+          ))}
         </p>
         <p>
           <strong>Age Rating: </strong> {ageRating}

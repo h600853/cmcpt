@@ -16,14 +16,13 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameClick }) => {
     const gameName = h5Elements[0]?.textContent;
     const gameClicked = games.find((game) => game.title == gameName);
   };
-
   return (
     <div className="game-grid">
       {games.map((game) => (
         <GameCard
           key={game.gameId}
           title={game.title}
-          genre={game.genreSet[0].name}
+          genre={game.genreSet}
           ageRating={game.ageRating.age}
           image={game.imageUrl}
           triggerWarnings={game.triggerWarningSet}
