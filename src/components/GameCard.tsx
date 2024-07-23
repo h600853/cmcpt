@@ -17,12 +17,14 @@ const GameCard: React.FC<GameCardProps> = ({
       <img src={image || "/static/images/default-game-image.jpg"} alt={title} />
       <div className="game-card-content">
         <h5>{title}</h5>
-        <p>
-          <strong>Genre: </strong>{" "}
-          {genre.map((warning, index) => (
-            <li key={index}>{warning.name}</li>
-          ))}
-        </p>
+        <div>
+          <strong className="genre-label">Genre:</strong>
+          <ul className="genre-list">
+            {genre.map((genreItem, index) => (
+              <li key={index}>{genreItem.name}</li>
+            ))}
+          </ul>
+        </div>
         <p>
           <strong>Age Rating: </strong> {ageRating}
         </p>
