@@ -1,11 +1,16 @@
 
+@font-face {
+  font-family: 'clby';
+  src: url('https://use.typekit.net/af/892ae9/00000000000000003b9ad902/27/l?subset_id=2&fvd=n4&v=3') format('woff2');
+}
+
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   background-color:#041C34; 
   color: white; 
-  font-family: Arial, sans-serif;
+  font-family: 'clby', sans-serif;
 }
 
 .centered-container {
@@ -18,6 +23,7 @@ body, html {
   padding: 0px;
 }
 
+
 .search-bar-container,
 .filter-container {
   width: 100%;
@@ -26,10 +32,37 @@ body, html {
   margin-bottom: 10px;
 }
 
+.search-bar-container input {
+  width: 300px; 
+  padding: 5px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px; 
+}
+
 .filter {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+.filter input,
+.filter select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 135px;
+}
+
+.filter select {
+  background-color: #fff;
+  color: #000;
+}
+
+.filter label {
+  color: white;
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 .content{
@@ -40,6 +73,7 @@ body, html {
 
 h1 {
   margin-bottom: 10px;
+  
 }
 
 p {
