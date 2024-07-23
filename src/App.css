@@ -18,6 +18,20 @@ body, html {
   padding: 0px;
 }
 
+.search-bar-container,
+.filter-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 .content{
     width: 100%;
     max-width: 600px;

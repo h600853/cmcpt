@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import Filter from "./components/Filter";
-import GameLibrary from "./components/GameLibrary";
 import useFetchData from "./components/useFetchData";
 import { Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/About_Us";
 import "./App.css";
-import GameModal from "./components/GameModal";
 import Navbar from "./components/Navbar";
 import { Game } from "./types/Game";
-import MainPage from "./pages/MainPage"
+import MainPage from "./pages/MainPage";
 
 const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,9 +16,6 @@ const App: React.FC = () => {
     loading,
     error,
   } = useFetchData<Game[]>({ endpoint: "games" });
-
-  // For Modal:
-  const [selectedGame, setSelectedGame] = useState<Game | null>(null);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error</div>;
@@ -43,10 +36,22 @@ const App: React.FC = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<MainPage filteredGames = {filteredGames} />}></Route>
+        <Route
+          path="/"
+          element={
+            <MainPage
+              filteredGames={filteredGames}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              selectedGenre={selectedGenre}
+              setSelectedGenre={setSelectedGenre}
+              selectedAgeRating={selectedAgeRating}
+              setSelectedAgeRating={setSelectedAgeRating}
+            />
+          }
+        />
         <Route path="/about" element={<AboutUs />} />
       </Routes>
-
     </>
   );
 };

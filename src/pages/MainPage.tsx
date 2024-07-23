@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
-import GameModal from '../components/GameModal';
-import SearchBar from '../components/SearchBar';
-import Filter from '../components/Filter';
-import GameLibrary from '../components/GameLibrary';
-import { Game } from '../types/Game';
+import React, { useState } from "react";
+import GameModal from "../components/GameModal";
+import SearchBar from "../components/SearchBar";
+import Filter from "../components/Filter";
+import GameLibrary from "../components/GameLibrary";
+import { Game } from "../types/Game";
 
 interface MainPageProps {
   filteredGames: Game[];
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
+  selectedGenre: string;
+  setSelectedGenre: (genre: string) => void;
+  selectedAgeRating: string;
+  setSelectedAgeRating: (rating: string) => void;
 }
 
-const MainPage: React.FC<MainPageProps> = ({ filteredGames }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const [selectedAgeRating, setSelectedAgeRating] = useState("");
+const MainPage: React.FC<MainPageProps> = ({
+  filteredGames,
+  searchTerm,
+  setSearchTerm,
+  selectedGenre,
+  setSelectedGenre,
+  selectedAgeRating,
+  setSelectedAgeRating,
+}) => {
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
 
   return (
