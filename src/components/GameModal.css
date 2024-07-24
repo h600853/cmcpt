@@ -20,6 +20,7 @@
     border-radius: 10px;
     width: 90%;
     max-width: 600px;
+    height: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     color: white; /* Sets the default text color to white */
