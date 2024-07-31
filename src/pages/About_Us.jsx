@@ -14,24 +14,24 @@ const AboutUs = () => {
                 <p>At our company, we believe in the power of social media to drive results and grow businesses. That's why we've brought together a team of experts who are passionate about helping our clients succeed online.</p>
                 <div className="team-section">
                     <div className="team-member">
-                        <img src={`${process.env.PUBLIC_URL}/TeamMember1.jpg`} alt="Sophie Schrödinger" />
+                        <img src={`${process.env.PUBLIC_URL}/Anders2.png`} alt="Anders" />
                         <div className="member-info">
-                            <h3>Sophie Schrödinger</h3>
-                            <p>Psychologist</p>
+                            <h3>Anders Fosse Hereide</h3>
+                            <p>Developer</p>
                         </div>
                     </div>
                     <div className="team-member">
-                        <img src={`${process.env.PUBLIC_URL}/TeamMember2.jpg`} alt="Ruben Martinsen" />
+                        <img src={`${process.env.PUBLIC_URL}/Selma.png`} alt="Selma" />
                         <div className="member-info">
-                            <h3>Ruben Martinsen</h3>
-                            <p>Sr. Game Developer</p>
+                            <h3>Selma Nathalie Contreras Halvorsen </h3>
+                            <p>Developer</p>
                         </div>
                     </div>
                     <div className="team-member">
-                        <img src={`${process.env.PUBLIC_URL}/TeamMember3.jpg`} alt="Olivia Wilson" />
+                        <img src={`${process.env.PUBLIC_URL}/Sondre.png`} alt="Sondre Fjeldstad" />
                         <div className="member-info">
-                            <h3>Olivia Smith</h3>
-                            <p>Sr. Graphic Designer</p>
+                            <h3>Sondre Fjeldstad</h3>
+                            <p>Developer</p>
                         </div>
                     </div>
                 </div>
