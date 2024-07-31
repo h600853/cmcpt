@@ -34,37 +34,30 @@ const GameModal: React.FC<GameModalProps> = ({ game, onClose }) => {
         <div className="modal-body">
           <h2 className="modal-title">{game.title}</h2>
           <p>
-            <span className="modal-label">Genre:</span> {game.genreSet[0].name}
+            <span className="modal-label">Genre:</span>{" "}
+            {game.genreSet.map((genre) => genre.name).join(", ")}
           </p>
           <p>
             <span className="modal-label">Description:</span> {game.description}
           </p>
           <p>
             <span className="modal-label">Trigger Warnings:</span>{" "}
-            {game.triggerWarningSet.length > 0 ? (
-              <ul className="modal-trigger-warnings">
-                {game.triggerWarningSet.map((warning, index) => (
-                  <li key={index}>{warning.description}</li>
-                ))}
-              </ul>
-            ) : (
-              "None"
-            )}
+            {game.triggerWarningSet.length > 0
+              ? game.triggerWarningSet
+                  .map((warning, index) => warning.description)
+                  .join(", ")
+              : "None"}
           </p>
           <p>
             <span className="modal-label">Price:</span> ${game.price}
           </p>
           <p>
             <span className="modal-label">Platforms:</span>{" "}
-            {game.platformSet.length > 0 ? (
-              <ul className="modal-platforms">
-                {game.platformSet.map((platform, index) => (
-                  <li key={index}>{platform.name}</li>
-                ))}
-              </ul>
-            ) : (
-              "None"
-            )}
+            {game.platformSet.length > 0
+              ? game.platformSet
+                  .map((platform, index) => platform.name)
+                  .join(", ")
+              : "None"}
           </p>
         </div>
       </motion.div>

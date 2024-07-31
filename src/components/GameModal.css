@@ -1,81 +1,82 @@
 /* GameModal.css */
 .modal-backdrop {
-    background-color: rgba(4, 28, 52, 0.95); /* Dark blue background */
-    backdrop-filter: blur(5px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    overflow-y: auto; /* Enables scrolling within the modal */
-  }
-  
-  .modal-content {
-    background-color: #041c34; /* Dark blue background for modal */
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-    height: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    color: white; /* Sets the default text color to white */
-  }
+  background-color: rgba(4, 28, 52, 0.95); 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
 
-  .modal-close-container {
-    position: absolute;
-    top: 40px; /* Adjust top position as needed */
-    right: 10px; /* Adjust right position as needed */
-    z-index: 1001; /* Ensure close button is above modal content */
-  }
-  
-  .modal-close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 24px;
-    position: absolute;
-    top: 10px; /* Adjust top position as needed */
-    right: 10px; /* Adjust right position as needed */
-  }
-  
-  .modal-image-large {
-    width: 100%; 
-    height: auto;
-    max-height: 300px; 
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 60px;
-  }
-  
-  .modal-body {
-    text-align: center; 
-  }
-  
-  .modal-title {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center; 
-  }
-  
-  
-  .modal-label {
-    color: white; /* Sets the color of labels like "Genre:", "Price:", etc., to white */
-    font-weight: bold;
-  }
-  
-  .modal-trigger-warnings, .modal-platforms {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .modal-trigger-warnings li {
-    color: white; /* Ensure trigger warnings are white in the modal */
-  }
-  
+.modal-content {
+  background-color: #041c34; 
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: white;
+  overflow-y: auto; 
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.modal-content::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar width */
+  background: transparent; /* Optional: Transparent background */
+}
+
+.modal-close-container {
+  position: absolute;
+  top: 20px; 
+  right: 10px; 
+  z-index: 1001; 
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+
+.modal-image-large {
+  width: 100%; 
+  height: auto;
+  max-height: 300px; 
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  text-align: left; 
+}
+
+.modal-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center; 
+}
+
+.modal-label {
+  color: white; 
+  font-weight: bold;
+}
+
+.modal-trigger-warnings, .modal-platforms {
+  display: inline;
+}
+
+.modal-trigger-warnings li, .modal-platforms li {
+  display: inline; 
+  margin-right: 5px; 
+  color: white; 
+}
