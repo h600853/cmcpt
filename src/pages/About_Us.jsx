@@ -17,21 +17,21 @@ const AboutUs = () => {
                         <img src={`${process.env.PUBLIC_URL}/Anders2.png`} alt="Anders" />
                         <div className="member-info">
                             <h3>Anders Fosse Hereide</h3>
-                            <p>Developer</p>
+                            <p>Devloper</p>
                         </div>
                     </div>
                     <div className="team-member">
                         <img src={`${process.env.PUBLIC_URL}/Selma.png`} alt="Selma" />
                         <div className="member-info">
                             <h3>Selma Nathalie Contreras Halvorsen </h3>
-                            <p>Developer</p>
+                            <p>Devloper</p>
                         </div>
                     </div>
                     <div className="team-member">
                         <img src={`${process.env.PUBLIC_URL}/Sondre.png`} alt="Sondre Fjeldstad" />
                         <div className="member-info">
                             <h3>Sondre Fjeldstad</h3>
-                            <p>Developer</p>
+                            <p>Devloper</p>
                         </div>
                     </div>
                 </div>
