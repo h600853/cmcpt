@@ -70,7 +70,7 @@
     font-weight: bold;
   }
   
-  .modal-trigger-warnings {
+  .modal-trigger-warnings, .modal-platforms {
     list-style: none;
     padding: 0;
   }

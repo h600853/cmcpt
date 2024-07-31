@@ -37,9 +37,6 @@ const GameModal: React.FC<GameModalProps> = ({ game, onClose }) => {
             <span className="modal-label">Genre:</span> {game.genreSet[0].name}
           </p>
           <p>
-            <span className="modal-label">Price:</span> ${game.price}
-          </p>
-          <p>
             <span className="modal-label">Description:</span> {game.description}
           </p>
           <p>
@@ -48,6 +45,21 @@ const GameModal: React.FC<GameModalProps> = ({ game, onClose }) => {
               <ul className="modal-trigger-warnings">
                 {game.triggerWarningSet.map((warning, index) => (
                   <li key={index}>{warning.description}</li>
+                ))}
+              </ul>
+            ) : (
+              "None"
+            )}
+          </p>
+          <p>
+            <span className="modal-label">Price:</span> ${game.price}
+          </p>
+          <p>
+            <span className="modal-label">Platforms:</span>{" "}
+            {game.platformSet.length > 0 ? (
+              <ul className="modal-platforms">
+                {game.platformSet.map((platform, index) => (
+                  <li key={index}>{platform.name}</li>
                 ))}
               </ul>
             ) : (

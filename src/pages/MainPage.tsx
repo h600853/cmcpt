@@ -36,12 +36,14 @@ const MainPage: React.FC<MainPageProps> = ({
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
 
-        <Filter
-          selectedGenre={selectedGenre}
-          setSelectedGenre={setSelectedGenre}
-          selectedAgeRating={selectedAgeRating}
-          setSelectedAgeRating={setSelectedAgeRating}
-        />
+        <div className="filter-container">
+          <Filter
+            selectedGenre={selectedGenre}
+            setSelectedGenre={setSelectedGenre}
+            selectedAgeRating={selectedAgeRating}
+            setSelectedAgeRating={setSelectedAgeRating}
+          />
+        </div>
       </div>
       <GameLibrary games={filteredGames} onGameClick={setSelectedGame} />
       {selectedGame && (
